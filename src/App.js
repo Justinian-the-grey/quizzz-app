@@ -1,9 +1,25 @@
 import './App.css'
 import Home from './components/home/Home'
 import Questionaire from './components/questionaire/Questionaire'
+import { useState } from 'react'
 
 function App() {
-  const start = true
+  //const start1 = false
+  const [start, setStart] = useState(false)
+  const [url, setUrl] = useState('')
+
+  function startQuiz(newUrl) {
+    setStart(true)
+    console.log('url number: ' + newUrl)
+    if (newUrl !== '0')
+      setUrl(`https://opentdb.com/api.php?amount=5&category=${newUrl}`)
+    else setUrl('https://opentdb.com/api.php?amount=5')
+  }
+
+  function getHome() {
+    setStart(false)
+  }
+
   return (
     <div className='App'>
       {!start && (
@@ -15,7 +31,13 @@ function App() {
           ></path>
         </svg>
       )}
-      <div className='conatiner'>{start ? <Questionaire /> : <Home />}</div>
+      <div className='conatiner'>
+        {start ? (
+          <Questionaire checkStart={start} url={url} getHome={getHome} />
+        ) : (
+          <Home start={startQuiz} />
+        )}
+      </div>
     </div>
   )
 }

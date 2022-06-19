@@ -1,0 +1,19 @@
+.answer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 12px;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  color: #293264;
+  border: 0.794239px solid #4d5b9e;
+  border-radius: 7.94239px;
+  height: fit-content;
+  padding: 0.4rem;
+}

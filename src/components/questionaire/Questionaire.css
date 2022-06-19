@@ -1,8 +1,8 @@
 .questionaire-container {
   margin-top: -2rem;
   height: 100vh;
-  padding-top: 2rem;
   overflow: auto;
+  padding: 2rem 5rem 0 5rem;
 }
 
 .check {
@@ -10,4 +10,22 @@
   height: 3.32rem;
   margin-bottom: 0;
   margin-top: 2rem;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 19px;
+  text-align: center;
+
+  color: #293264;
 }

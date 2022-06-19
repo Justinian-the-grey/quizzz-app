@@ -1,44 +1,47 @@
 /* eslint-disable react/prop-types */
 import './Question.css'
+import Answer from '../answer/Answer'
 
 function Question(props) {
-  const {
-    category,
-    type,
-    difficulty,
-    question,
-    correct_answer,
-    incorrect_answers,
-  } = props.question
+  const { text, answers, id } = props.question
+  const checkAnswerClicked = props.checkAnswerClicked
+  const isFinished = props.isFinished
 
-  console.log(category, type, difficulty)
-
-  const answers = [...incorrect_answers, correct_answer]
-
-  function cleanAnswers(strs) {
-    return strs
-      .map((str) => str.replaceAll('&#039;', ' '))
-      .map((str) => str.replaceAll('&quot;', '"'))
-      .map((str) => str.replaceAll('&', ''))
-      .map((str) => str.replaceAll('uml;', ''))
+  function cleanAnswers(oldAnswers) {
+    return oldAnswers.map((oldAnswer) => {
+      return {
+        ...oldAnswer,
+        text: customReplaceAll(oldAnswer.text),
+      }
+    })
   }
 
   const checkedAnswers = cleanAnswers(answers)
-  const checkedQuestion = question
-    .replaceAll('&#039;', ' ')
-    .replaceAll('&quot;', '"')
-    .replaceAll('&', '')
-    .replaceAll('uml;', '')
+  const checkedQuestion = customReplaceAll(text)
+
+  function customReplaceAll(str) {
+    return str
+      .replaceAll('&#039;', ' ')
+      .replaceAll('&quot;', '"')
+      .replaceAll('&', '')
+      .replaceAll('uml;', '')
+      .replaceAll('lt;', '<')
+      .replaceAll('gt;', '>')
+  }
 
   return (
     <div className='question-container'>
       <p className='question'>{checkedQuestion}</p>
       <div className='answers'>
-        {checkedAnswers.map((answer, index) => {
+        {checkedAnswers.map((answerData) => {
           return (
-            <p key={index} className='answer'>
-              {answer}
-            </p>
+            <Answer
+              key={answerData.id}
+              questionId={id}
+              answer={answerData}
+              checkAnswerClicked={checkAnswerClicked}
+              isFinished={isFinished}
+            />
           )
         })}
       </div>

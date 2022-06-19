@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 0 20rem 0 20rem;
 }
 
 .title {
@@ -34,7 +35,7 @@
   box-shadow: 0px 5px 7.68px rgba(0, 0, 0, 0.18);
   background-color: #293264;
   border: none;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 
   font-family: 'Inter';
   font-style: normal;
@@ -42,7 +43,7 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: aliceblue;
+  color: #f5f7fb;
 }
 
 .start-button:hover {
@@ -53,4 +54,22 @@
 .start-button:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
   background-color: #7b68f7;
+}
+
+.category-selection {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #293264;
 }
