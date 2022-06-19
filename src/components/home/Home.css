@@ -1,0 +1,56 @@
+.home-container {
+  height: 71vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  color: #293264;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 37px;
+}
+
+.description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #293264;
+}
+
+.start-button {
+  width: 15rem;
+  height: 5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 5px 7.68px rgba(0, 0, 0, 0.18);
+  background-color: #293264;
+  border: none;
+  margin-bottom: 7rem;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: aliceblue;
+}
+
+.start-button:hover {
+  /* outline: none; */
+  background-color: #5d45fc;
+}
+
+.start-button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+  background-color: #7b68f7;
+}

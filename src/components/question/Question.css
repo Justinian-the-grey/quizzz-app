@@ -1,0 +1,40 @@
+.question-container {
+  margin-top: 1rem;
+}
+
+.question {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 19px;
+  color: #293264;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0.9px solid #dbdef0;
+}
+
+.answer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 12px;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  color: #293264;
+  border: 0.794239px solid #4d5b9e;
+  border-radius: 7.94239px;
+  height: 1rem;
+  padding: 0.2rem;
+}
