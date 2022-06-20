@@ -27,6 +27,7 @@ function Question(props) {
       .replaceAll('uml;', '')
       .replaceAll('lt;', '<')
       .replaceAll('gt;', '>')
+      .replaceAll('amp;', '&')
   }
 
   return (
